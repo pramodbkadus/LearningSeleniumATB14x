@@ -20,4 +20,12 @@ public class CommonToAll {
         }
         driver.quit();
     }
+
+    public void customWait(int time){
+        try{
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
