@@ -15,7 +15,6 @@ import org.testng.annotations.Test;
 
 public class TestSelenium17_Project_Locators_Selenium_ID_CLASSNAME_NAME extends CommonToAll {
 
-
         @Description("TC#1 - Verify that with invalid login, error message is displayed!")
         @Owner("Pramod Kadus")
         @Severity(SeverityLevel.BLOCKER)
