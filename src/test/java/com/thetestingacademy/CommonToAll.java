@@ -27,9 +27,9 @@ public class CommonToAll {
         driver.quit();
     }
 
-    public void customWait(int time){
+    public void customWait(int timeInMiliSeconds){
         try{
-            Thread.sleep(time);
+            Thread.sleep(timeInMiliSeconds);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,22 +11,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class waitHelpers {
+public class WaitHelpers {
 
-    public static void waitJVM(int timeInSeconds){
+    public static void waitJVM(int timeInMiliSeconds){
         try{
-            Thread.sleep(timeInSeconds);
+            Thread.sleep(timeInMiliSeconds);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void waitImplicitWait(WebDriver driver, int timeInSeconds){
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeInSeconds));
+    public static void waitImplicitWait(WebDriver driver, int timeInMiliSeconds){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeInMiliSeconds));
     }
 
-    public static void checkVisibility(WebDriver driver, By locator, int timeInSeconds){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInSeconds));
+    public static void checkVisibility(WebDriver driver, By locator, int timeInMiliSeconds){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInMiliSeconds));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
